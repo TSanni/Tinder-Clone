@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var mng: AppStateManager = AppStateManager()
+    @StateObject var mng: AppStateManager = AppStateManager()
     
     var body: some View {
         MainView()

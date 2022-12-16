@@ -43,6 +43,7 @@ struct TabBarButtonView: View {
 
 struct TabBarButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarButtonView(type: .message) 
+        TabBarButtonView(type: .message)
+            .environmentObject(AppStateManager())
     }
 }
