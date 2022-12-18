@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var userMng: UserManager
+    @EnvironmentObject var appState: AppStateManager
+    
+    var user: User {
+        return userMng.currentUser
+    }
+    
     var body: some View {
         VStack(spacing: 0) {
             ZStack(alignment: .topTrailing) {
-                RoundedImage(url: URL(string: "https://picsum.photos/400"))
+                RoundedImage(url: user.imageURLS.first)
                     .frame(height: 175)
                 
                 Button {
@@ -30,17 +37,20 @@ struct ProfileView: View {
                 
             }
             
-            Spacer().frame(height: 18)
-            
-            Text("Tomas, 26")
-                .foregroundColor(.textTitle)
-                .font(.system(size: 26, weight: .medium))
-            
-            Spacer().frame(height: 8)
-            
-            Text("iOS Developer")
-            
-            Spacer().frame(height: 22)
+            Group {
+                Spacer().frame(height: 18)
+                
+                Text("\(user.name), \(user.age)")
+                    .foregroundColor(.textTitle)
+                    .font(.system(size: 26, weight: .medium))
+                
+                Spacer().frame(height: 8)
+                
+                Text("\(user.jobTitle)")
+                
+                Spacer().frame(height: 22)
+            }
+ 
             
             HStack(alignment: .top) {
                 Spacer()
@@ -109,41 +119,46 @@ struct ProfileView: View {
             
             Spacer().frame(height: 14)
             
-            HStack {
-                Text("Tips to get more likes: Don't take too many selfies. Have pictures of yourself at different places")
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(3)
-                    .foregroundColor(.white)
-                    .font(.system(size: 14))
-                
-                Button {
+            if !user.profileTip.isEmpty {
+                HStack {
+                    Text("\(user.profileTip)")
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(3)
+                        .foregroundColor(.white)
+                        .font(.system(size: 14))
                     
-                } label: {
-                    Image(systemName: "plus")
-                        .font(.system(size: 12, weight: .heavy))
-                        .foregroundColor(.pink)
-                        .padding(6)
-                }
-                .background(.white)
-                .clipShape(Circle())
-
-            }
-            .padding()
-            .background(.pink)
-            .cornerRadius(12)
-            .padding(.horizontal, 8)
-            
-            
-            ZStack {
-                Color.gray.opacity(0.15)
-                ProfileSwipePromo {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.system(size: 12, weight: .heavy))
+                            .foregroundColor(.pink)
+                            .padding(6)
+                    }
+                    .background(.white)
+                    .clipShape(Circle())
                     
                 }
+                .padding()
+                .background(.pink)
+                .cornerRadius(12)
+                .padding(.horizontal, 8)
             }
-            .padding(.top, 18)
             
             
-//            Spacer()
+            if !user.goldSubscriber {
+                ZStack {
+                    Color.gray.opacity(0.15)
+                    ProfileSwipePromo {
+                        appState.showPurchaseScreen()
+                    }
+                }
+                .padding(.top, 18)
+            }
+            
+            Spacer()
+            
+            
         }
         .foregroundColor(Color.black.opacity(0.75))
     }
@@ -153,6 +168,8 @@ struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
             .background(Color.defaultBackground)
+            .environmentObject(UserManager())
+            .environmentObject(AppStateManager())
         
     }
 }
