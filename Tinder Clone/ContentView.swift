@@ -10,10 +10,12 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject var mng: AppStateManager = AppStateManager()
+    @StateObject var userMng: UserManager = UserManager()
     
     var body: some View {
         MainView()
             .environmentObject(mng)
+            .environmentObject(userMng)
             .preferredColorScheme(.light)
     }
 }
