@@ -15,7 +15,7 @@ struct MainView: View {
         //Use AnyView to fix error when returning different types of Views such as Text and Color
         switch appState.selectedTab {
         case .fire:
-            let view = Text("Fire")
+            let view = HomeView()
             return AnyView(view)
         case .star:
             let view = MatchesView()

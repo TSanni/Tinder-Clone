@@ -40,6 +40,12 @@
 		83CA44A6295132F9000BDC93 /* PurchaseOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA44A5295132F9000BDC93 /* PurchaseOptionView.swift */; };
 		83CA44A829513403000BDC93 /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA44A729513403000BDC93 /* Subscription.swift */; };
 		83CA44AA29513C72000BDC93 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA44A929513C72000BDC93 /* RoundedCorner.swift */; };
+		83CA44AE2951A407000BDC93 /* CardImageScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA44AD2951A407000BDC93 /* CardImageScroller.swift */; };
+		83CA44B12952592C000BDC93 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA44B02952592C000BDC93 /* CardView.swift */; };
+		83CA44B329525F23000BDC93 /* FullScreenCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA44B229525F23000BDC93 /* FullScreenCardView.swift */; };
+		83CA44B529526DA0000BDC93 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA44B429526DA0000BDC93 /* CircleButtonView.swift */; };
+		83CA44B729527DDD000BDC93 /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA44B629527DDD000BDC93 /* CardStack.swift */; };
+		83CA44B92952B552000BDC93 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CA44B82952B552000BDC93 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +82,12 @@
 		83CA44A5295132F9000BDC93 /* PurchaseOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOptionView.swift; sourceTree = "<group>"; };
 		83CA44A729513403000BDC93 /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		83CA44A929513C72000BDC93 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		83CA44AD2951A407000BDC93 /* CardImageScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageScroller.swift; sourceTree = "<group>"; };
+		83CA44B02952592C000BDC93 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		83CA44B229525F23000BDC93 /* FullScreenCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenCardView.swift; sourceTree = "<group>"; };
+		83CA44B429526DA0000BDC93 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
+		83CA44B629527DDD000BDC93 /* CardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
+		83CA44B82952B552000BDC93 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +126,7 @@
 				83B88665294BE60900A50320 /* AppStateManager.swift */,
 				83B8868F294E436300A50320 /* UserManager.swift */,
 				83B88669294C046600A50320 /* MainTabBar */,
+				83CA44AF2951A43E000BDC93 /* Home */,
 				83B8866C294CE7F600A50320 /* Profile */,
 				83B88680294D266C00A50320 /* Messages */,
 				83B88695294E457500A50320 /* MatchesView */,
@@ -157,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				83B8866F294CE97B00A50320 /* RoundedImage.swift */,
+				83CA44B429526DA0000BDC93 /* CircleButtonView.swift */,
 			);
 			path = HelperViews;
 			sourceTree = "<group>";
@@ -223,6 +237,26 @@
 				83CA44A929513C72000BDC93 /* RoundedCorner.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		83CA44AC2951A3EA000BDC93 /* CardViews */ = {
+			isa = PBXGroup;
+			children = (
+				83CA44AD2951A407000BDC93 /* CardImageScroller.swift */,
+				83CA44B02952592C000BDC93 /* CardView.swift */,
+				83CA44B629527DDD000BDC93 /* CardStack.swift */,
+				83CA44B229525F23000BDC93 /* FullScreenCardView.swift */,
+			);
+			path = CardViews;
+			sourceTree = "<group>";
+		};
+		83CA44AF2951A43E000BDC93 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				83CA44AC2951A3EA000BDC93 /* CardViews */,
+				83CA44B82952B552000BDC93 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,13 +335,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83CA44B329525F23000BDC93 /* FullScreenCardView.swift in Sources */,
 				83B88684294D477000A50320 /* ChatManager.swift in Sources */,
 				83B8868A294D811A00A50320 /* MessageListView.swift in Sources */,
 				83B88664294BE28100A50320 /* TabBarButtonView.swift in Sources */,
+				83CA44B529526DA0000BDC93 /* CircleButtonView.swift in Sources */,
 				83B88697294E49B200A50320 /* PersonSquare.swift in Sources */,
 				83B88670294CE97B00A50320 /* RoundedImage.swift in Sources */,
 				83B8869D2950085200A50320 /* PurchasePopup.swift in Sources */,
 				83B88686294D498D00A50320 /* ChatViewHeader.swift in Sources */,
+				83CA44B92952B552000BDC93 /* HomeView.swift in Sources */,
 				83B8869B294EB6AE00A50320 /* MatchesView.swift in Sources */,
 				83B8868E294D9AEE00A50320 /* MessageRowView.swift in Sources */,
 				83B88668294BE7E800A50320 /* Extensions.swift in Sources */,
@@ -321,6 +358,7 @@
 				83B88676294CF2ED00A50320 /* ProfileSwipePromo.swift in Sources */,
 				83B88662294BE06500A50320 /* MainView.swift in Sources */,
 				83B88654294BD9E700A50320 /* Tinder_CloneApp.swift in Sources */,
+				83CA44AE2951A407000BDC93 /* CardImageScroller.swift in Sources */,
 				83CA44A6295132F9000BDC93 /* PurchaseOptionView.swift in Sources */,
 				83B88678294D0AA900A50320 /* Message.swift in Sources */,
 				83CA44A329513133000BDC93 /* PurchaseSwipePromo.swift in Sources */,
@@ -330,7 +368,9 @@
 				83B88690294E436300A50320 /* UserManager.swift in Sources */,
 				83B88699294EB58800A50320 /* TopPicksView.swift in Sources */,
 				83B8867D294D25B000A50320 /* MessagePreview.swift in Sources */,
+				83CA44B12952592C000BDC93 /* CardView.swift in Sources */,
 				83B88692294E43B400A50320 /* User.swift in Sources */,
+				83CA44B729527DDD000BDC93 /* CardStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
